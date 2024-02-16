@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ user.email }}'s Page{% endblock %}
+
+{% block body %}
+    <a href="/">Home</a>
+    <h1>{{ user.email }}</h1>
+    <h1>Ratings</h1>
+    <ul>
+        {% for rating in user.ratings %}
+            <li>
+                <p>Movie: {{ rating.movie.title }}</p>
+                <p>Score: {{ rating.score }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
